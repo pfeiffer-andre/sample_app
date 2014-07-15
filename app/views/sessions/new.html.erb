@@ -1,0 +1,22 @@
+
+#ruby structure to become html
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+#email field
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+#password field
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+#login button
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    <% end %>
+#register button
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
+
